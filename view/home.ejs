@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/brands.min.css"  />
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <link rel="stylesheet" href="/css/home.css">
+    
+</head>
+<body>
+ <div class="page">
+    <div class="heading">
+<h1>Upload the csv which you want to view by this App</h1>
+    </div>
+
+    <div class="upload">
+<form action="/upload" method="post" enctype="multipart/form-data">
+
+<input type="file" name="csv_file" id="" accept=".csv" required>
+<button type="submit">Upload</button>
+</form>
+
+    </div>
+
+    <div class="view">
+
+<%for(let file of File){%>
+    <div class="document">
+        <span><%=file.name%></span><a href="/view/<%=file._id%>"><i class="fa-solid fa-eye"></i></a><a href="/delete/<%=file._id%>"><i class="fa-solid fa-trash-can"></i></a>    
+    </div>
+
+    <%}%>
+    </div>
+ </div>
+</body>
+<script>
+<%if(flash.success && flash.success.length>0){%>
+
+    new Noty({
+        theme:'relax',
+        text:'<%=flash.success%>',
+        type:'success',
+        layout:'topRight',
+        timeout:1500
+    }).show();
+    <%}%>
+
+<%if(flash.error && flash.error.length>0){%>
+
+    new Noty({
+        theme:'relax',
+        text:'<%=flash.error%>',
+        type:'error',
+        layout:'topRight',
+        timeout:1500
+    }).show();
+    <%}%>
+</script>
+
+</html>

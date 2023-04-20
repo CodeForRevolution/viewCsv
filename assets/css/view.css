@@ -1,0 +1,138 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+body::-webkit-scrollbar{
+    display: none;
+}
+tr{
+    border: 1px solid black;
+}
+th{
+    border: 1px solid blueviolet;
+    width: auto;
+}
+td{
+    border:1px solid orange;
+    text-align: center;
+}
+
+table{
+    border: 1px solid green;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+
+.header{
+    display: flex;
+    width: 100vw;
+    height: 7vh;
+    flex-direction: row;
+   justify-content: center;
+   justify-content: space-between;
+   background-color:  #bfbfbf;
+}
+.header form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 40%;
+    background-color: #f2f2f2;
+    border-radius: 25px ;
+}
+.search input,
+.search button,
+.search select{
+    width: 30%;
+    border-radius: 25px;
+    height:80%;
+    background-color:  #bfbfbf;
+    color: black;
+    text-align: center;
+}
+
+
+
+.sort input,
+.sort button,
+.sort select{
+    width: 30%;
+    height:80%;
+    border-radius: 25px;
+    background-color:  #bfbfbf;
+    color: black;
+    text-align: center;
+}
+ .sort button{
+    background-color:  #595959;
+    color: white;
+}
+.search button{
+    background-color:#595959;
+    color: white;
+}
+.header a{
+    width: 10%;
+    height: 90%;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    color: white;
+    background-color:  #595959;
+    border-radius: 10px;
+    justify-content: center;
+    text-decoration: none;
+
+    
+}
+
+
+/* wokring on the pagination section  */
+.pagination{
+    width:100%;
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+    font-size: 18px;
+    align-items: center;
+    justify-content: center;
+    background-color:  #bfbfbf;
+}
+
+.pageAnchor{
+    text-decoration: none;
+    margin: 5px;
+    color: white;
+    border-radius: 10px;
+    padding: 2px;
+    background-color:#595959 ;
+}
+
+
+.page_controller{
+    font-size: 25px;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: black;
+    margin: 5px;
+    padding: 2px;
+    color:white;
+}
+
+#anchorActive{
+    background-color:green;
+    color: white;
+    padding: 5px;
+}

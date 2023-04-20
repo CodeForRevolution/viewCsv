@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <link rel="stylesheet" href="/css/view.css">
+
+<body>
+
+    <div class="header">
+        <a href="/">HOME</a>
+
+        <form action="" method="get" class="sort">
+            <select name="field" id="">
+                <option value=''>select you Field</option>
+                <%for(let k=0;k<columnName.length;k++){%>
+                    <option value="<%=columnName[k]%>">
+                        <%=columnName[k]%>
+                    </option>
+                    <%}%>
+            </select>
+            <select name="order" id="">
+                <option value="NaN">select you order</option>
+                <option value="Assending">Assending</option>
+                <option value="Desending">Desending</option>
+            </select>
+            <button type="submit">SORT</button>
+        </form>
+
+        <form action="" method="get" class="search">
+            <select name="field_search" id="">
+                <option value=''>select search Field</option>
+                <%for(let k=0;k<columnName.length;k++){%>
+                    <option value="<%=columnName[k]%>">
+                        <%=columnName[k]%>
+                    </option>
+                    <%}%>
+            </select>
+            <input type="text" name="search" placeholder="SEARCH....">
+            <button type="submit">SEARCH</button>
+        </form>
+    </div>
+    <table>
+
+        <tr>
+    <th>N0</th>
+            <%for(let k=0;k<columnName.length;k++){%>
+                <th>
+                    <%=columnName[k]%>
+                </th>
+                <%}%>
+        </tr>
+
+
+        <%for(let i=0;i<Data.length;i++){%>
+
+            <tr>
+                <td>
+                    <%=i%>
+                </td>
+                <%for(let j=0;j<columnName.length;j++){%>
+                    <td>
+                        <%=Data[i][columnName[j]]%>
+                    </td>
+                    <%}%>
+            </tr>
+            <%}%>
+
+    </table>
+
+    <div class="pagination">
+
+
+        <%if(totalPage>2){%>
+
+            <a class="page_controller"
+                href="?page=<%=Prev%>&field=<%=field%>&order=<%=order%>&field_search=<%=field_search%>&search=<%=search%>">Prev</a>
+
+            <%}%>
+
+                <%for(let i=1;i<=totalPage;i++){%>
+
+
+                    <%if(i==page){%>
+                        <a class="pageAnchor" id="anchorActive"
+                            href="?page=<%=i%>&field=<%=field%>&order=<%=order%>&field_search=<%=field_search%>&search=<%=search%>">Page
+                            <%=i%></a>
+
+                        <%}else{%>
+
+                            <a class="pageAnchor"
+                                href="?page=<%=i%>&field=<%=field%>&order=<%=order%>&field_search=<%=field_search%>&search=<%=search%>">Page
+                                <%=i%></a>
+                            <%}%>
+
+                                <%}%>
+
+                                    <%if(totalPage>2){%>
+                                        <a class="page_controller"
+                                            href="?page=<%=Next%>&field=<%=field%>&order=<%=order%>&field_search=<%=field_search%>&search=<%=search%>">Next</a>
+                                        <%}%>
+    </div>
+</body>`
+
+
+<script>
+
+    <%if(flash.success && flash.success.length>0){%>
+
+        new Noty({
+            theme:'relax',
+            text:'<%=flash.success%>',
+            type:'success',
+            timeout:1500
+        }).show();
+        <%}%>
+
+    <%if(flash.error && flash.error.length>0){%>
+
+        new Noty({
+            theme:'relax',
+            text:'<%=flash.error%>',
+            type:'error',
+            timeout:1500
+        }).show();
+        <%}%>
+
+
+
+
+
+
+</script>
+
+</html>

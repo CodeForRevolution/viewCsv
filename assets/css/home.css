@@ -1,0 +1,104 @@
+body{
+    background-color: orange;
+    margin: 0;
+    padding: 0;
+}
+
+*{
+    box-sizing: border-box;
+}
+.page{
+    background-color: #a3c2c2;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.heading{
+    background-color: #e0ebeb;
+    width: 60%;
+    height: 7%;
+    margin-bottom: 20px;
+}
+.heading h1{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+
+form{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+input[type="file"] {
+  
+    z-index: 2;
+    top: 10px;
+    left: 8px;
+    font-size: 20px;
+    color:green;
+
+
+  
+  }
+form button{
+    height: 80%;
+    width: 40%;
+    background-color: green;
+    border-radius: 25px;
+    font-size: 20px;
+}
+.upload{
+    background-color: #d1e0e0;
+    width: 42%;
+    height: 6%;
+    margin: 20px;
+    
+}
+.view{
+    background-color:whitesmoke;
+    width: 50%;
+ min-height: 10%;
+ height: auto;
+}
+
+
+/* workin on the view section for the file name */
+
+.document{
+    background-color: #d1e0e0;
+    width: 100%;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    justify-content: space-between;
+    font-size: 20px;
+    margin-top: 5px;
+}
+.document span{
+    margin-left: 10px;
+    width: 60%;
+    height: 100%;
+}
+.document a{
+    width: 20%;
+    height: 100%;
+    margin-left: 10px;
+    display: flex;
+    margin-right: 10px;
+    justify-content: flex-end;
+    text-decoration: none;
+}
+.fa-trash-can{
+    color: red;
+}
